@@ -19,4 +19,4 @@ The user has the ability to add or delete planes from the fleet.
 
 #### Lessons Learned
 
-I learned how to use the switch loop.
+Used object oriented programming including inheritance, encapsulation, input/output, and interface.
