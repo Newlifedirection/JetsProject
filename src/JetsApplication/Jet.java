@@ -43,16 +43,18 @@ public String getModel() {
 	}
 
 
-	public double calculateMPHToMach() {
+	public double calculateMachToMPH() {
 			double calcSpeed = 0;
+			return calcSpeed;
 		}
 
 	public int calcRange() {
 			int calcRange = 0;
+			return calcRange;
 		}
 
-	public double getSpeedInMach(double) {
-		
+	public double getSpeedInMach(double speed) {
+		return 0.0;
 	}
 	public Jet(String model, double speed, int range, long price) {
 		super();
@@ -70,5 +72,10 @@ public String getModel() {
 			System.out.println("The range is " + range + "Miles");
 			System.out.println("The price is $" + price);
 		}
+
+	public void loadCargo() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

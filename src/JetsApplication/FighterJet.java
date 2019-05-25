@@ -1,19 +1,14 @@
 package JetsApplication;
 
-public class FighterJet extends Jet {
+public class FighterJet extends Jet implements CombatReady{
 
-	FighterJet fJet = new FighterJet();
-
-	public FighterJet() {
-
-	private void fight() {
-		
-	}
-		
+	public FighterJet(String model, double speed, int range, long price) {
+		super(model, speed, range, price);
 	}
 
-	public class FighterJet implements CombatReady {
-
+	public void fight() {
+		System.out.println("Watch your 6.");
+		System.out.println("Remember to use your turn signal.");
 	}
 
 }

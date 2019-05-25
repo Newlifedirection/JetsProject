@@ -1,9 +1,9 @@
-Fighter, F-15 Eagle, Mach 3.5, 30_000_000
-Fighter, F-16 Falcon, Mach 3, 500_000_000
-Fighter, F-22A Raptor, Mach 3, 510_000_000
-Cargo, C5M Super Galaxy, Mach 0.2, 80_000_000
-Cargo, C20, Mach 0.2, 75_000_000
-Cargo Passanger, C-37A, Mach 0.5, 70_000_000
-Passanger, Boeing BBJ, Mach 0.5, 65_000_000
-Passanger, Boeing Business, Mach 0.65, 70_000_000
-Passanger, Boeing 747 8 VIP, Mach 0.86, 310_000_000
+Fighter, F-15 Eagle, 800, 3.5, 30_000_000
+Fighter, F-16 Falcon, 800, 3, 500_000_000
+Fighter, F-22A Raptor, 800, 3, 510_000_000
+Cargo, C5M Super Galaxy, 1000, 0.2, 80_000_000
+Cargo, C20, 1050, 0.2, 75_000_000
+CargoPassenger, C-37A, 1500, 0.5, 70_000_000
+Passenger, Boeing BBJ, 2000, 0.5, 65_000_000
+Passenger, Boeing Business, 2050, 0.65, 70_000_000
+Passenger, Boeing 747 8 VIP, 2000, 0.86, 310_000_000
