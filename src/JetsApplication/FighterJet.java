@@ -7,8 +7,10 @@ public class FighterJet extends Jet implements CombatReady{
 	}
 
 	public void fight() {
+		
+		System.out.println(this.getModel() + " arming.");
 		System.out.println("Watch your 6.");
-		System.out.println("Remember to use your turn signal.");
+		System.out.println("Don't use turnsignals!");
 	}
 
 }

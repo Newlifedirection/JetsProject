@@ -10,18 +10,24 @@ import java.util.Scanner;
 
 public class JetsApplication {
 
+	private AirField airfield;
+	private Scanner kb;
+	
 	public static void main(String[] args) {
 		JetsApplication jetsApp = new JetsApplication();
 		jetsApp.launch();
 	}
 
 	private void launch() {
+		Scanner kb = new Scanner(System.in);
 		AirField airfield = new AirField();
-		displayUserMenu(airfield);
+		displayUserMenu(airfield, kb);
 	}
 
-	public void displayUserMenu(AirField airfield) {
-		Scanner kb = new Scanner(System.in);
+	public void displayUserMenu(AirField airfield, Scanner kb) {
+		
+		boolean stayInJets = true;
+		do {
 		System.out.println("Main Menu, please make your selection");
 		System.out.println();
 		System.out.println("1: List Fleet "); // List fleet prints out the model, speed, range, and price of each jet.
@@ -43,18 +49,20 @@ public class JetsApplication {
 		System.out.println("9: Quit ");
 
 		int choice = kb.nextInt();
-		userAction(choice, airfield);
-
+		if(choice == 9) {
+			System.out.println("Good Bye!");
+			stayInJets = false;
+		}else {
+			userAction(choice, airfield, kb);
+			
+		}
+		} while(stayInJets);
+		
 	}
 
-	public void addJet() {
-		System.out.println("Enter model");
-		System.out.println("Enter speed");
-		System.out.println("Enter range");
-		System.out.println("Enter price");
-	}
+	
 
-	public void userAction(int choice, AirField airfield) {
+	public void userAction(int choice, AirField airfield, Scanner kb) {
 
 		switch (choice) {
 
@@ -84,11 +92,11 @@ public class JetsApplication {
 			break;
 		case 7:
 			System.out.println("7");
-			airfield.addAJet();
+			airfield.addAJet(kb);
 			break;
 		case 8:
 			System.out.println("8");
-			airfield.removeAJet();
+			airfield.removeAJet(kb);
 			break;
 		case 9:
 			System.out.println("9");
@@ -100,5 +108,6 @@ public class JetsApplication {
 			break;
 		}
 	}
+
 
 }

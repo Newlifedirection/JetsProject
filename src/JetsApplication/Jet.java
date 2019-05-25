@@ -74,11 +74,6 @@ public String getModel() {
 			System.out.println("The price is $" + price);
 		}
 
-	public void loadCargo() {
-		// TODO Auto-generated method stub
-		
-	}
-
 	@Override
 	public String toString() {
 		return "Jet [model=" + model + ", speed=" + speed + ", range=" + range + ", price=" + price + "]";

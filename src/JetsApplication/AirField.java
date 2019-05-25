@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class AirField {
 
@@ -55,42 +56,91 @@ public class AirField {
 
 	public void printAllJets() {
 		for (Jet jet : allJets) {
+			System.out.println(jet);
 		}
 	}
 
 	public void flyAllJets() {
 		for (Jet flyjet : allJets) {
+			flyjet.fly();
 		}
 	}
 
 	public void viewFastestJets() {
+		double highestSpeed = 0;
+		Jet tempJet = null;
 		for (Jet fastjet : allJets) {
+			if(fastjet.getSpeed()> highestSpeed) {
+				highestSpeed = fastjet.getSpeed();
+				tempJet = fastjet;
+			}
 		}
+		System.out.println("The fastest jet is: " + tempJet);
 	}
 
 	public void viewLongestRange() {
+		int longRange = 0;
+		Jet tempRange = null;
 		for (Jet longestrange : allJets) {
+			if(longestrange.getRange()> longRange) {
+				longRange = longestrange.getRange();
+				tempRange = longestrange;
+			}
 		}
+		System.out.println("The longest range jet is: " + tempRange);
 	}
 
 	public void loadAllCargoJets() {
-		for (Jet loadallcargojets : allJets) {
+		for (Jet jet : allJets) {
+			if(jet instanceof CargoCarrier) {
+				((CargoCarrier) jet).loadCargo();
+				System.out.println();
+			}
 		}
 	}
 
 	public void dogFight() {
-		for (Jet dogfight : allJets) {
+		for (Jet f : allJets) {
+			if(f instanceof CombatReady) {
+				((CombatReady) f).fight();
+				System.out.println();
+			}
 		}
 	}
 
-	public void addAJet() {
-		for (Jet addajet : allJets) {
+	public void addAJet(Scanner kb) {
+		kb.nextLine();
+		System.out.println("Enter model");
+		String model = kb.nextLine();
+		System.out.println("Enter speed");
+		double speed = kb.nextDouble();
+		System.out.println("Enter range");
+		int range = kb.nextInt();
+		System.out.println("Enter price");
+		long price = kb.nextLong();
+		System.out.println("Type of aircraft: (fighter/cargo/passenger)");
+		String type = kb.next();
+		
+		if (type.equalsIgnoreCase("Fighter")) {
+			FighterJet fighterJet = new FighterJet(model, speed, range, price);
+			allJets.add(fighterJet);
+		}
+		if (type.equalsIgnoreCase("Cargo")) {
+			CargoPlane cargoPlane = new CargoPlane(model, speed, range, price);
+			allJets.add(cargoPlane);
+		}
+		if (type.equalsIgnoreCase("Passenger")) {
+			PassengerPlane passengerPlane = new PassengerPlane(model, speed, range, price);
+			allJets.add(passengerPlane);
 		}
 	}
-
-	public void removeAJet() {
-		for (Jet removeajet : allJets) {
+	public void removeAJet(Scanner kb) {
+		System.out.println("Select a model to delete: ");
+		for (int i = 0; i < allJets.size(); i++) {
+			System.out.println(i + " " + allJets.get(i));
 		}
+		int choice = kb.nextInt();
+		allJets.remove(choice);
 	}
 
 	public void Quit() {
