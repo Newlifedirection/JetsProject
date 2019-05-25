@@ -13,9 +13,9 @@ The user has the ability to add or delete planes from the fleet.
 
 #### Technologies Used
 
-* git
-* Markdown
-* Java
+ git
+ Markdown
+ Java
 
 #### Lessons Learned
 
