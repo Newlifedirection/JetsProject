@@ -44,6 +44,7 @@ public String getModel() {
 
 
 	public double calculateMachToMPH() {
+//		public double calcSpeed(3.1, 767.269); //MPH = _Mach *767.269
 			double calcSpeed = 0;
 			return calcSpeed;
 		}
@@ -76,6 +77,11 @@ public String getModel() {
 	public void loadCargo() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public String toString() {
+		return "Jet [model=" + model + ", speed=" + speed + ", range=" + range + ", price=" + price + "]";
 	}
 
 }
